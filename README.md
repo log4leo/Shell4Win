@@ -6,7 +6,7 @@ A Windows shell interpreter accepting shell commands and shell scripts
 Reason for Shell4Win
 =========
 
-As a former UNIX administrator, I find batch commands under windows too messy and don't always act as expected. 
+As a former UNIX administrator, I think batch commands under windows is a little too messy and more importantly, don't always act as expected. 
 <br/ >
 I'm tired of that and decide to write a interpreter which can accept shell commands and scripts, just like shell under UNIX, which is more clean and easy to use.
 
