@@ -1,0 +1,190 @@
+Created by PLY version 3.4 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> statement
+Rule 1     statement -> expression
+Rule 2     statement -> term
+Rule 3     expression -> term PIPE term
+Rule 4     expression -> term COLON term
+Rule 5     term -> term LREDIRECT COMMAND
+Rule 6     term -> term RREDIRECT COMMAND
+Rule 7     term -> COMMAND
+Rule 8     term -> term COMMAND
+
+Terminals, with rules where they appear
+
+COLON                : 4
+COMMAND              : 5 6 7 8
+LREDIRECT            : 5
+PIPE                 : 3
+RREDIRECT            : 6
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 1
+statement            : 0
+term                 : 2 3 3 4 4 5 6 8
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . expression
+    (2) statement -> . term
+    (3) expression -> . term PIPE term
+    (4) expression -> . term COLON term
+    (5) term -> . term LREDIRECT COMMAND
+    (6) term -> . term RREDIRECT COMMAND
+    (7) term -> . COMMAND
+    (8) term -> . term COMMAND
+
+    COMMAND         shift and go to state 3
+
+    term                           shift and go to state 1
+    expression                     shift and go to state 4
+    statement                      shift and go to state 2
+
+state 1
+
+    (2) statement -> term .
+    (3) expression -> term . PIPE term
+    (4) expression -> term . COLON term
+    (5) term -> term . LREDIRECT COMMAND
+    (6) term -> term . RREDIRECT COMMAND
+    (8) term -> term . COMMAND
+
+    $end            reduce using rule 2 (statement -> term .)
+    PIPE            shift and go to state 6
+    COLON           shift and go to state 9
+    LREDIRECT       shift and go to state 5
+    RREDIRECT       shift and go to state 8
+    COMMAND         shift and go to state 7
+
+
+state 2
+
+    (0) S' -> statement .
+
+
+
+state 3
+
+    (7) term -> COMMAND .
+
+    LREDIRECT       reduce using rule 7 (term -> COMMAND .)
+    RREDIRECT       reduce using rule 7 (term -> COMMAND .)
+    COMMAND         reduce using rule 7 (term -> COMMAND .)
+    $end            reduce using rule 7 (term -> COMMAND .)
+    PIPE            reduce using rule 7 (term -> COMMAND .)
+    COLON           reduce using rule 7 (term -> COMMAND .)
+
+
+state 4
+
+    (1) statement -> expression .
+
+    $end            reduce using rule 1 (statement -> expression .)
+
+
+state 5
+
+    (5) term -> term LREDIRECT . COMMAND
+
+    COMMAND         shift and go to state 10
+
+
+state 6
+
+    (3) expression -> term PIPE . term
+    (5) term -> . term LREDIRECT COMMAND
+    (6) term -> . term RREDIRECT COMMAND
+    (7) term -> . COMMAND
+    (8) term -> . term COMMAND
+
+    COMMAND         shift and go to state 3
+
+    term                           shift and go to state 11
+
+state 7
+
+    (8) term -> term COMMAND .
+
+    LREDIRECT       reduce using rule 8 (term -> term COMMAND .)
+    RREDIRECT       reduce using rule 8 (term -> term COMMAND .)
+    COMMAND         reduce using rule 8 (term -> term COMMAND .)
+    $end            reduce using rule 8 (term -> term COMMAND .)
+    PIPE            reduce using rule 8 (term -> term COMMAND .)
+    COLON           reduce using rule 8 (term -> term COMMAND .)
+
+
+state 8
+
+    (6) term -> term RREDIRECT . COMMAND
+
+    COMMAND         shift and go to state 12
+
+
+state 9
+
+    (4) expression -> term COLON . term
+    (5) term -> . term LREDIRECT COMMAND
+    (6) term -> . term RREDIRECT COMMAND
+    (7) term -> . COMMAND
+    (8) term -> . term COMMAND
+
+    COMMAND         shift and go to state 3
+
+    term                           shift and go to state 13
+
+state 10
+
+    (5) term -> term LREDIRECT COMMAND .
+
+    LREDIRECT       reduce using rule 5 (term -> term LREDIRECT COMMAND .)
+    RREDIRECT       reduce using rule 5 (term -> term LREDIRECT COMMAND .)
+    COMMAND         reduce using rule 5 (term -> term LREDIRECT COMMAND .)
+    $end            reduce using rule 5 (term -> term LREDIRECT COMMAND .)
+    PIPE            reduce using rule 5 (term -> term LREDIRECT COMMAND .)
+    COLON           reduce using rule 5 (term -> term LREDIRECT COMMAND .)
+
+
+state 11
+
+    (3) expression -> term PIPE term .
+    (5) term -> term . LREDIRECT COMMAND
+    (6) term -> term . RREDIRECT COMMAND
+    (8) term -> term . COMMAND
+
+    $end            reduce using rule 3 (expression -> term PIPE term .)
+    LREDIRECT       shift and go to state 5
+    RREDIRECT       shift and go to state 8
+    COMMAND         shift and go to state 7
+
+
+state 12
+
+    (6) term -> term RREDIRECT COMMAND .
+
+    LREDIRECT       reduce using rule 6 (term -> term RREDIRECT COMMAND .)
+    RREDIRECT       reduce using rule 6 (term -> term RREDIRECT COMMAND .)
+    COMMAND         reduce using rule 6 (term -> term RREDIRECT COMMAND .)
+    $end            reduce using rule 6 (term -> term RREDIRECT COMMAND .)
+    PIPE            reduce using rule 6 (term -> term RREDIRECT COMMAND .)
+    COLON           reduce using rule 6 (term -> term RREDIRECT COMMAND .)
+
+
+state 13
+
+    (4) expression -> term COLON term .
+    (5) term -> term . LREDIRECT COMMAND
+    (6) term -> term . RREDIRECT COMMAND
+    (8) term -> term . COMMAND
+
+    $end            reduce using rule 4 (expression -> term COLON term .)
+    LREDIRECT       shift and go to state 5
+    RREDIRECT       shift and go to state 8
+    COMMAND         shift and go to state 7
+
