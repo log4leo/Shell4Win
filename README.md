@@ -60,4 +60,4 @@ Shell4Win uses following third party tools:
 
 License
 =========
-[MIT](http://opensource.org/licenses/MIT)
+[BSD]
