@@ -58,3 +58,6 @@ Shell4Win uses following third party tools:
 * [py2exe](http://www.py2exe.org/):generate executable exe files on Windows
 
 
+License
+=========
+[MIT](http://opensource.org/licenses/MIT)
