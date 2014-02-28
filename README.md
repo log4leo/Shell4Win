@@ -15,13 +15,13 @@ Download zip files and all executables can be found in the bin directory.
 How to use
 =========
 
-Shell4Win.exe in the bin directory is our main program,double click and you can get an interactive window where you can type in any <a href="available-commands">available commands</a>. <br />
-Shell4Win is also capable of explaining shell scripts by typing in <a href="examples">sh example.sh</a>
+Shell4Win.exe in the bin directory is our main program,double click and you can get an interactive window where you can type in any <a href="#available-commands">available commands</a>. <br />
+Shell4Win is also capable of explaining shell scripts by typing in <a href="#examples">sh example.sh</a>
 
 Available Commands
 =========
 
-Shell4Win realised many common commands and the list of available commands keeps growing.
+Shell4Win realised many commands in common use and the list of available commands keeps growing.
 [echo,cd,ls,cat,rm,grep,wc,mkdir,touch,cp,mv...]
 
 Examples
