@@ -50,5 +50,18 @@ Shell4Win.py
 C:\Users\Administrator\Documents\GitHub\Shell4Win\src
 ```
 
+Dependecies
+=========
+
+Shell4Win uses following third party tools:
+* [ply](http://www.dabeaz.com/ply/):generate lexical analyzer and syntax analyzer
+* [py2exe](http://www.py2exe.org/):generate executable exe files on Windows
 
 
+Problems
+=========
+
+There is still some problems in Shell4Win,including:
+1. no enough commands
+2. no support for command argument
+main reason for this is that shell commands typically has many argument,which made it too much work to support command arguments.If someone interested in fixing this,contact me:)
