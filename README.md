@@ -22,7 +22,7 @@ Available Commands
 =========
 
 Shell4Win realised many commands in common use and the list of available commands keeps growing.
-[echo,cd,ls,cat,rm,grep,wc,mkdir,touch,cp,mv...]
+[echo,cd,ls,cat,rm,grep,wc,mkdir,touch,cp,mv,read,sh,diff...]
 
 Dependecies
 =========
@@ -105,33 +105,6 @@ echo "diff can be used to compare two text files:"
 
 diff 1 2
 
-echo "mv can move files or change file name:"
-
-mv 1 3
-
-ls
-
-echo "cp can copy files:"
-
-cp 2 4
-
-ls
-
-echo "rm can remove directory or files,and grep can be used with pipes:"
-
-rm 4
-
-ls
-
-echo "touch can create empty files:"
-
-touch 5
-
-ls
-
-echo "wc can measure file lines:"
-
-wc 2
 
 [Administrator@PC-20121113XYVZ]#sh example.sh
 #This is a example shell script written to demostrate a shell interpreter named Shell4Win# 
@@ -162,56 +135,4 @@ test content1
 test content2 
 diff can be used to compare two text files: 
 line 1:   test content1 	test content2 
-mv can move files or change file name: 
-[Error 183] 
-example.sh
-parser.out
-parsetab.py
-parsetab.pyc
-ply
-Shell4Win.py
-test
-tools.py
-tools.pyc
-utilities.py
-utilities.pyc
-cp can copy files: 
-example.sh
-parser.out
-parsetab.py
-parsetab.pyc
-ply
-Shell4Win.py
-test
-tools.py
-tools.pyc
-utilities.py
-utilities.pyc
-rm can remove directory or files,and grep can be used with pipes: 
-example.sh
-parser.out
-parsetab.py
-parsetab.pyc
-ply
-Shell4Win.py
-test
-tools.py
-tools.pyc
-utilities.py
-utilities.pyc
-touch can create empty files: 
-file 5 already exist!
-example.sh
-parser.out
-parsetab.py
-parsetab.pyc
-ply
-Shell4Win.py
-test
-tools.py
-tools.pyc
-utilities.py
-utilities.pyc
-wc can measure file lines: 
-1
 ```
