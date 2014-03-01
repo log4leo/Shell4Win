@@ -9,7 +9,7 @@ If you happen to be familiar with shell and have to deal with Windows from now a
 How to get 
 =========
 
-Download zip files and all executables can be found in the bin directory.
+<a href="https://github.com/log4leo/Shell4Win/archive/master.zip">Download</a> zip files and all executables can be found in the bin directory.
 
 
 How to use
