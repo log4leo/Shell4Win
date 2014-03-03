@@ -1,6 +1,7 @@
 import os
 import sys
 import shutil
+import tools
 sys.path.insert(0,"../..")
 
 
@@ -27,8 +28,12 @@ def cd(param):
     print "change current directory to "+param
     os.chdir(param)
     
-def ls(param=os.getcwd()):
-    ret=os.listdir(param)
+def ls(*d):
+    if(len(d)==0):
+        cur=os.getcwd()
+        ret=os.listdir(cur)
+    else:
+        ret=os.listdir(d[0])
     return list_to_str(ret)
 
 def cat(param):
@@ -62,11 +67,13 @@ def grep(match,source):
     return list_to_str(ans)
     
 def redirect(source,destination):
-    if os.path.isfile(destination):
+    #if os.path.isfile(destination):
         f=open(destination,"w")
         f.write(source)
-    else:
-        raise Exception("No such file "+destination)
+    #else:
+     #   f=open(destination,'w')
+        
+    #    raise Exception("No such file "+destination)
     
 def wc(s):
     return len(s.split('\n'))
@@ -99,3 +106,41 @@ def mv(*p):
     else:
         raise Exception("Illegal Argument number: mv accept 1 or 2 arguments")
     
+def sh(fn):
+    f=open(fn,"r")
+    for l in f:
+        tools.parse(l.strip())
+        
+def echo(*ss):
+    ans=""
+    for s in ss:
+        ans+=s.replace('"','')+" "
+    return ans
+    
+def diff(fn1,fn2):
+    ans=[]
+    f1=open(fn1,"r")
+    f2=open(fn2,"r")
+    list1=f1.readlines()
+    list2=f2.readlines()
+    max_len=max([len(list1),len(list2)])
+    min_len=min([len(list1),len(list2)])
+    for i in range(0,min_len):
+        s1=list1[i]
+        s2=list2[i]
+        if s1!=s2:
+            ans.append("line "+str(i+1)+":   "+s1 +"\t"+s2)
+    for i in range(min_len,max_len):
+        s=list1[i]
+        if s:
+            ans.append("line "+str(i+1)+":   "+s+"\t")
+        else:
+            ans.append("line "+str(i+1)+":   "+"\t"+s)
+    return list_to_str(ans)
+
+
+def read(*ss):
+    ans=""
+    for s in ss:
+        ans+=s.replace('"','')+" "    
+    raw_input(ans)
