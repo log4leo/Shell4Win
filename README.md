@@ -22,8 +22,7 @@ Available Commands
 =========
 
 Shell4Win realised many commands in common use and the list of available commands keeps growing.
-[echo,cd,ls,cat,rm,grep,wc,mkdir,touch,cp,mv,read,sh,diff...]
-
+[echo,cd,ls,cat,rm,grep,wc,mkdir,touch,cp,mv,read,sh,diff...]<br/>
 Detailed usage information can be found in the [wiki](https://github.com/log4leo/Shell4Win/wiki/_preview)
 
 Some Special Things in Shell4Win
