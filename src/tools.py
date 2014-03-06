@@ -33,7 +33,7 @@ def t_error(t):
 
 
 def t_COMMAND(t):
-    r'"?[^|<>;\t ]+"?'
+    r'"?[^|<>;\t ]+"?|".*"'
     return t
 
 

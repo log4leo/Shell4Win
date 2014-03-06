@@ -2,6 +2,7 @@ import os
 import sys
 import shutil
 import tools
+import subprocess
 sys.path.insert(0,"../..")
 
 
@@ -55,7 +56,7 @@ def rm(path):
                 os.remove(fn)
         return               
     if os.path.isdir(path):
-        os.rmdir(path)
+        shutil.rmtree(path)
     else:
         os.remove(path)
 
@@ -96,15 +97,23 @@ def touch(fn):
 def cp(source,destination):
     if not os.path.exists(source):
         raise Exception("No such file exists!")
-    shutil.copyfile(source,destination)
-    
-def mv(*p):
-    if len(p)==2:
-        os.rename(p[0], p[1])
-    elif len(p)==1:
-        shutil.move(p[0])
+    if os.path.isfile(source):
+        shutil.copy(source,destination)
     else:
-        raise Exception("Illegal Argument number: mv accept 1 or 2 arguments")
+        if(os.path.exists(destination) and os.path.isfile(destination)):
+            raise Exception("File "+destination+" exists, please specify another directory name for dir copy!")
+        if(not os.path.exists(destination)):
+            mkdir(destination)
+        for f in os.listdir(source):
+            abf=source+'\\'+f
+            if os.path.isdir(abf):
+                cp(abf,destination+'\\'+f)
+            else:
+                shutil.copy(abf,destination)    
+        
+        
+def mv(source,destination):
+    shutil.move(source,destination)
     
 def sh(fn):
     f=open(fn,"r")
@@ -144,3 +153,10 @@ def read(*ss):
     for s in ss:
         ans+=s.replace('"','')+" "    
     raw_input(ans)
+    
+    
+def call(*p):
+    ans=""
+    for cmd in p:
+        ans+=cmd+" "
+    os.system(ans)

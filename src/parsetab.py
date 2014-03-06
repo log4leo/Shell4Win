@@ -26,12 +26,12 @@ for _k, _v in _lr_goto_items.items():
 del _lr_goto_items
 _lr_productions = [
   ("S' -> statement","S'",1,None,None,None),
-  ('statement -> expression','statement',1,'p_statement','c:\\Users\\Administrator\\Desktop\\ply-3.4\\example\\Shell4Win\\tools.py',90),
-  ('statement -> term','statement',1,'p_statement','c:\\Users\\Administrator\\Desktop\\ply-3.4\\example\\Shell4Win\\tools.py',91),
-  ('expression -> term PIPE term','expression',3,'p_expression_pipe','c:\\Users\\Administrator\\Desktop\\ply-3.4\\example\\Shell4Win\\tools.py',98),
-  ('expression -> term COLON term','expression',3,'p_expression_colon','c:\\Users\\Administrator\\Desktop\\ply-3.4\\example\\Shell4Win\\tools.py',107),
-  ('term -> term LREDIRECT COMMAND','term',3,'p_expression_lredirect','c:\\Users\\Administrator\\Desktop\\ply-3.4\\example\\Shell4Win\\tools.py',115),
-  ('term -> term RREDIRECT COMMAND','term',3,'p_expression_rredirect','c:\\Users\\Administrator\\Desktop\\ply-3.4\\example\\Shell4Win\\tools.py',119),
-  ('term -> COMMAND','term',1,'p_expression','c:\\Users\\Administrator\\Desktop\\ply-3.4\\example\\Shell4Win\\tools.py',126),
-  ('term -> term COMMAND','term',2,'p_expression','c:\\Users\\Administrator\\Desktop\\ply-3.4\\example\\Shell4Win\\tools.py',127),
+  ('statement -> expression','statement',1,'p_statement','C:\\Users\\Administrator\\Documents\\GitHub\\Shell4Win\\src\\tools.py',90),
+  ('statement -> term','statement',1,'p_statement','C:\\Users\\Administrator\\Documents\\GitHub\\Shell4Win\\src\\tools.py',91),
+  ('expression -> term PIPE term','expression',3,'p_expression_pipe','C:\\Users\\Administrator\\Documents\\GitHub\\Shell4Win\\src\\tools.py',98),
+  ('expression -> term COLON term','expression',3,'p_expression_colon','C:\\Users\\Administrator\\Documents\\GitHub\\Shell4Win\\src\\tools.py',107),
+  ('term -> term LREDIRECT COMMAND','term',3,'p_expression_lredirect','C:\\Users\\Administrator\\Documents\\GitHub\\Shell4Win\\src\\tools.py',115),
+  ('term -> term RREDIRECT COMMAND','term',3,'p_expression_rredirect','C:\\Users\\Administrator\\Documents\\GitHub\\Shell4Win\\src\\tools.py',119),
+  ('term -> COMMAND','term',1,'p_expression','C:\\Users\\Administrator\\Documents\\GitHub\\Shell4Win\\src\\tools.py',126),
+  ('term -> term COMMAND','term',2,'p_expression','C:\\Users\\Administrator\\Documents\\GitHub\\Shell4Win\\src\\tools.py',127),
 ]
