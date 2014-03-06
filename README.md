@@ -29,10 +29,10 @@ Some Special Things in Shell4Win
 
 * Execute commands as far as possible<br />
 
-For example, if you specified a directory as destination that doesn't exist in cp command, Shell4Win will create a directory for you instead of quit the program. So you should be careful when typing some dangerous commands
+ For example, if you specified a directory as destination that doesn't exist in cp command, Shell4Win will create a directory for you instead of quit the program. So you should be careful when typing some dangerous commands
  
 * Do the same thing to directory and file <br />
-Since I don't enough time to add arguments support for every command, So Shell4Win regards files and directories as the same thing in many cases. e.g rm 1 will remove 1 no matter it is a file or directory, it works the same with other similar commands like cp mv and so on
+ Since I don't enough time to add arguments support for every command, So Shell4Win regards files and directories as the same thing in many cases. e.g rm 1 will remove 1 no matter it is a file or directory, it works the same with other similar commands like cp mv and so on
 
 Dependecies
 =========
