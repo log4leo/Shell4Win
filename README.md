@@ -24,6 +24,12 @@ Available Commands
 Shell4Win realised many commands in common use and the list of available commands keeps growing.
 [echo,cd,ls,cat,rm,grep,wc,mkdir,touch,cp,mv,read,sh,diff...]
 
+Some Special Things in Shell4Win
+=========
+
+* Do the same thing to directory and file
+Since I don't enough time to add arguments support for every command, So Shell4Win regards files and directories as the same thing in many cases. e.g rm 1 will remove 1 no matter it is a file or directory, it works the same with other similar commands like cp mv and so on
+
 Dependecies
 =========
 
