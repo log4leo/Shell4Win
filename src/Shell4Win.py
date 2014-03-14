@@ -27,5 +27,6 @@ while 1:
         s=raw_input('['+user + '@' + computer_name +']#')
     except EOFError:
         break
+    if s.startswith('#'):continue
     if not s:continue
     tools.parse(s)

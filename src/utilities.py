@@ -3,6 +3,7 @@ import sys
 import shutil
 import tools
 import subprocess
+import helpers
 sys.path.insert(0,"../..")
 
 
@@ -160,3 +161,22 @@ def call(*p):
     for cmd in p:
         ans+=cmd+" "
     os.system(ans)
+    
+def findinfile(p,d=os.getcwd()):
+    ans=""
+    for f in os.listdir(d):
+        absf=d+"\\"+f
+        if os.path.isdir(absf):
+            ans=ans+findinfile(p,absf)
+        else:
+            if helpers.istext(absf):
+                content=open(absf,'r').readlines()
+                #print "search in file "+(d+f)
+                #contains=False
+                for s in content:
+                    if p in s:
+                        ans+=absf+"\n"
+                        break
+    return ans
+
+            
