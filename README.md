@@ -45,7 +45,7 @@ Shell4Win uses following third party tools:
 
 License
 =========
-[BSD]()
+[MIT]()
 
 
 Examples
