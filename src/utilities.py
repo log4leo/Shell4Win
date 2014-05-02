@@ -12,7 +12,7 @@ def list_to_str(l):
     if len(l)==0:
         return ans
     for i in range(0,len(l)-1):
-	if len(l[i])>2 and l[i].rfind('\n')==len(l[i])-1:
+	if len(l[i])>1 and l[i].rfind('\n')==len(l[i])-1:
         	ans+=l[i]
 	else:
 		ans+=l[i]+"\n"
