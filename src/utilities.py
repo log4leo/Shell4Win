@@ -43,7 +43,14 @@ def cat(param):
         raise Exception("No such file exists!")
     f=open(param)
     lines=f.readlines()
-    return list_to_str(lines)
+    ans=""
+    if len(lines)==0:
+        return ans
+    for i in range(0,len(lines)-1):
+        if len(lines[i])>2 and lines[i].rfind('\n')==len(lines[i])-1:
+            ans+=lines[i]
+    ans+=lines[len(lines)-1]
+    return ans
 
 def rm(path):
     if '*' in path:
