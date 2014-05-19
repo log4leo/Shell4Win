@@ -47,7 +47,6 @@ def cat(param):
     if len(lines)==0:
         return ans
     for i in range(0,len(lines)-1):
-        if len(lines[i])>2 and lines[i].rfind('\n')==len(lines[i])-1:
             ans+=lines[i]
     ans+=lines[len(lines)-1]
     return ans
